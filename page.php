@@ -1,29 +1,18 @@
-<?php get_header()?>
-<?php // checks if there are any posts that match the query
-if (have_posts()) :
+<?php get_header() ?>
 
-  // If there are posts matching the query then start the loop
-  while ( have_posts() ) : the_post();
+<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+<?php echo the_post_thumbnail(); ?>
 
-    // the code between the while loop will be repeated for each post
-    ?>
-
-
-<h2><?php the_title(); ?></h2>
-
+<h1><a href="<?php the_permalink() ?>"> <?php the_title(); ?></a> </h1>
+<div class="container">
+<div class="row">
+<div class="col">
 <?php the_content(); ?>
+</div>
+</div>
+</div>
+</div>
 
-<?php
-
-// Stop the loop when all posts are displayed
-endwhile;
-
-// If no posts were found
-else :
-?>
-<p>Sorry no posts matched your criteria.</p>
-<?php
-endif;
-?>
+<?php endwhile; endif; ?>
 
 <?php get_footer() ?>

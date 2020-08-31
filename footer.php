@@ -1,4 +1,6 @@
-<?php wp_footer() ?>
-<p>© 2020 Jonathan Doe - Tous droits réservés</p>
+
+<?php dynamic_sidebar( 'footer-sidebar' ); ?>
+
+<?php wp_footer(); ?>
 </body>
 </html>
